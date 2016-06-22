@@ -21,7 +21,7 @@ UUID = 6956641e-597a-4680-9207-9aa2d75f231a
 ### For example the last modified date of this file.
 ### This number must be less than 2^32.
 ### Just make your table version-able
-SERIAL_NUMBER = 20160612
+SERIAL_NUMBER = 20160622
 
 ### ICON can be any format as long as your pygtk can recognized
 ### the most widely ones are "png" and "svg", letter one is recommended
@@ -67,9 +67,10 @@ AUTO_COMMIT = TRUE
 ### Automatically selects the first phrase when typing
 AUTO_SELECT = TRUE
 
-### If true then a multi wildcard will be appended at the end of inputing string
-### automatically.
-AUTO_WILDCARD = FALSE
+### If true then the lookup table will always be shown if there is any
+### candidate phrase. Otherwise the lookup table won't be shown unless the user
+### requires it by moving the preedit caret left.
+ALWAYS_SHOW_LOOKUP = FALSE
 
 #### Use full width punctuation by default
 DEF_FULL_WIDTH_PUNCT = FALSE
