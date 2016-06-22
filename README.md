@@ -1,5 +1,7 @@
 # ibus-table-vietnamese
 
+![](icons/vietnamese.png)
+
 Do cả `ibus-unikey` và `ibus-bogo` đều rất buggy nên mình phát triển hai bảng
 gõ này dùng tạm.
 
@@ -8,17 +10,21 @@ gõ này dùng tạm.
 1. Cài đặt `ibus-table` nếu bạn chưa cài.
 2. Dùng `git` clone `ibus-table-vietnamese` hoặc tải tệp ZIP ở **Clone or
    download** rồi giải nén. Sau đấy `cd` vô thư mục đó.
-3. Dịch database từ mã nguồn:<pre>
-    ```    
+3. Dịch database từ mã nguồn
+
+    ```sh
     ibus-table-createdb --name=tables/vni.db --source=tables/vni.txt
     ibus-table-createdb --name=tables/telex.db --source=tables/telex.txt
-    ```</pre>
-4. Giả định `DATADIR` là `/usr/share`. Sao chép các tệp cần thiết vô
-   `${DATADIR}/ibus-table/`:<pre>
     ```
-    sudo cp tables/telex.db tables/vni.db ${DATADIR}/ibus-table/tables
+
+4. Giả định `DATADIR` là `/usr/share`. Sao chép các tệp cần thiết vô
+   `${DATADIR}/ibus-table/`:
+
+    ```sh
+    sudo cp tables/{telex.db,vni.db} ${DATADIR}/ibus-table/tables
     sudo cp icons/vietnamese.png ${DATADIR}/ibus-table/icons
-    ```</pre>
+    ```
+
 5. Khởi động lại `ibus-deamon` bằng lệnh `ibus-daemon -drx`.
 6. Chạy `ibus-setup`. Trong tab **Input Method** chọn *Add, Vietnamese, Telex*
    hoặc *VNI* rồi chọn *Add*.
@@ -46,13 +52,24 @@ bạn có thể gọi là dị, hoặc bất tiện, tuỳ các bạn, cơ mà m
   cũng bỏ luôn việc dùng `z` để huỷ dấu. Simple Telex (cả v1 và v2, là cái
   `w[]{}` ấy) đều không được hỗ trợ.
 
+## Tính năng lạ :beetle:
+
+Bản thân `ibus-table-vietnamese` chỉ là bảng dữ liệu cho `ibus-table` nên cố
+nhiên không thể có bug. Tuy nhiên, do `ibus-table` được thiết kế để với mục
+đích ban đầu là để gõ các ngôn ngữ CJK (Trung Quốc, Nhật Bản, Hàn Quốc) vốn
+phức tạp hơn chữ viết hệ Latin như chữ Quốc ngữ nhiều lần, bộ gõ này có nhiều
+tính năng không cần thiết cho việc gõ tiếng Việt như việc sử dụng các phím di
+chuyển (như Page Up, Page Down, các phím mũi tên) để chọn kí tự cần gõ. Xem
+thêm ở [README của ibus-table](https://github.com/kaio/ibus-table/). Cơ mà hẳn
+là các phím kí tự (số 1 đến 9, `-` và `+`) vẫn gõ được bình thường.
+
 ## Lưu ý khi dùng Vim
 
-`ibus-table` k tương thích với Vim, vì vậy mình đã lập 2 keymap tương tự, [đã
-được merge vô repo chính](https://github.com/vim/vim/tree/master/runtime/keymap).
-Trong `vimrc` bạn thêm mấy dòng sau:<pre>
-    """
+`ibus-table` không tương thích với Vim, vì vậy mình đã lập 2 keymap tương tự,
+[đã được merge vô Vim](https://github.com/vim/vim/tree/master/runtime/keymap)
+từ phiên bản 7.4.1942. Để sử dụng keymap này, trong `vimrc` bạn thêm mấy dòng
+sau:
+
     set keymap=vietnamese-telex " hoặc vietnamese-vni
     " Tắt keymap và ibus khi khởi động Vim
     set imdisable iminsert=0 imsearch=-1
-    """</pre>
