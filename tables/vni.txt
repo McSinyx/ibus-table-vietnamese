@@ -21,14 +21,14 @@ UUID = 9ad3eccd-5ee9-4776-ad1a-c02095e105a3
 ### For example the last modified date of this file.
 ### This number must be less than 2^32.
 ### Just make your table version-able.
-SERIAL_NUMBER = 20160802
+SERIAL_NUMBER = 20180823
 
 ### ICON can be any format as long as your pygtk can recognized.
 ### The most widely ones are "png" and "svg", letter one is recommended.
 ICON = vietnamese.png
 
 ### The symbol to be displayed in IM switchers.
-SYMBOL = ệ
+SYMBOL = vi
 
 ### The default name of this table, this is needed.
 NAME = VNI
