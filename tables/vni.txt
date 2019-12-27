@@ -11,7 +11,7 @@ VERSION_1_0
 BEGIN_DEFINITION
 
 ### License
-LICENSE = GPLv3
+LICENSE = GPLv3+
 
 ### An unique ID to distinguish this table among others.
 ### Use uuidgen to generate this kind of ID.
@@ -21,11 +21,11 @@ UUID = 9ad3eccd-5ee9-4776-ad1a-c02095e105a3
 ### For example the last modified date of this file.
 ### This number must be less than 2^32.
 ### Just make your table version-able.
-SERIAL_NUMBER = 20180823
+SERIAL_NUMBER = 20190825
 
 ### ICON can be any format as long as your pygtk can recognized.
 ### The most widely ones are "png" and "svg", letter one is recommended.
-ICON = vietnamese.png
+ICON = vni.png
 
 ### The symbol to be displayed in IM switchers.
 SYMBOL = vi
@@ -46,7 +46,7 @@ DESCRIPTION = Vietnamese VNI input method for IBus Table.
 LANGUAGES = vi_VN
 
 ### The author of this table.
-AUTHOR = Raphael McSinyx <vn.mcsinyx@gmail.com>
+AUTHOR = Nguyễn Gia Phong <vn.mcsinyx@gmail.com>
 
 ### Prompt string to be displayed in the status area, CN will be replaced by
 ### the gettext tools in runtime as 中.

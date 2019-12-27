@@ -1,6 +1,7 @@
 # ibus-table-vietnamese
 
-![](icons/vietnamese.png)
+![telex](https://raw.githubusercontent.com/McSinyx/ibus-table-vietnamese/master/icons/telex.png)
+![vni](https://raw.githubusercontent.com/McSinyx/ibus-table-vietnamese/master/icons/vni.png)
 
 Do cả `ibus-unikey` và `ibus-bogo` đều rất buggy nên mình phát triển hai bảng
 gõ này dùng tạm.
@@ -10,21 +11,10 @@ gõ này dùng tạm.
 1. Cài đặt `ibus-table` nếu bạn chưa cài.
 2. Dùng `git` clone `ibus-table-vietnamese` hoặc tải tệp ZIP ở **Clone or
    download** rồi giải nén. Sau đấy `cd` vô thư mục đó.
-3. Dịch database từ mã nguồn
-
-    ```sh
-    ibus-table-createdb --name=tables/vni.db --source=tables/vni.txt
-    ibus-table-createdb --name=tables/telex.db --source=tables/telex.txt
-    ```
-
-4. Giả định `DATADIR` là `/usr/share`. Sao chép các tệp cần thiết vô
-   `${DATADIR}/ibus-table/`:
-
-    ```sh
-    sudo cp tables/{telex.db,vni.db} ${DATADIR}/ibus-table/tables
-    sudo cp icons/vietnamese.png ${DATADIR}/ibus-table/icons
-    ```
-
+3. Dịch database từ mã nguồn: `make`
+4. Cài đặt: `sudo make install`.  Mặc định các bảng mã sẽ được cài đặt tại
+   `/usr/local/share/ibus-table`; dùng `sudo PREFIX=/usr make install` để
+   cài tại `/usr/share/ibus-table` nếu Ibus không tìm được các bảng mã.
 5. Khởi động lại `ibus-deamon` bằng lệnh `ibus-daemon -drx`.
 6. Chạy `ibus-setup`. Trong tab **Input Method** chọn *Add, Vietnamese, Telex*
    hoặc *VNI* rồi chọn *Add*.
