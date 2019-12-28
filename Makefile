@@ -26,9 +26,6 @@ clean:
 	rm tables/vni.db
 
 install:
-	mkdir -p ${DATADIR}/ibus-table/tables
-	mkdir -p ${DATADIR}/ibus-table/icons
-
 	cp tables/telex.db ${DATADIR}/ibus-table/tables/telex.db
 	cp icons/telex.png ${DATADIR}/ibus-table/icons/telex.png
 
